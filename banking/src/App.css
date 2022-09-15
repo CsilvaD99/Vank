@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-
-  background-color: darkgray;
 }
 
 .App-logo {
@@ -40,4 +38,45 @@
 }
 #root {
   background-color: darkgray;
+}
+.Signup {
+  display: flex;
+  border: 5px solid#282c34;
+  min-height: 100%;
+  min-width: fit-content;
+  flex-direction: column;
+}
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 5px solid blue;
+  min-height: 100%;
+}
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
+}
+.FormBox {
+  display: flex;
+  justify-content: center;
+  width: vh;
+}
+#root {
+  background-color: darkgray;
+}
+.Navbar {
+  display: flex;
+  justify-content: Space-Evenly;
+  background-color: blue;
+  min-height: 2rem;
+  align-items: center;
+}
+.link {
+  color: white;
 }
