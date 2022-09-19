@@ -1,12 +1,11 @@
-import { idText } from "typescript";
-import { supabase } from "./Supabase";
+import { supabase } from "./Supabase.js";
 
-export const SendTransaction = async () => {
+export const SendTransaction = async (id, plusbool, amount, touser) => {
   const { data, error } = await supabase.from("Transactions").insert([
     {
       userid: id,
       PlusMinus: plusbool,
-      transfAmound: amount,
+      transfAmount: amount,
       toAccount: touser,
     },
   ]);
@@ -26,6 +25,7 @@ export const ReadTrasfer = async () => {
       "toAccount",
       "created_at"
     );
+  return Transactions;
   if (error) {
     console.log(error);
     return error;
