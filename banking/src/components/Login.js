@@ -26,7 +26,7 @@ export default function Login() {
 
         <Button
           onClick={() => {
-            <Signup />;
+            window.location.href = "/signup";
           }}
           variant="contained"
         >
