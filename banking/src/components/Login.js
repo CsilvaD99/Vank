@@ -24,8 +24,7 @@ export default function Login() {
     if (!LogInn) {
       window.alert("Incorrect Email or Password");
     }
-    const GetUserUrl =
-      "https://nimble-druid-24ce06.netlify.app/api/user/getuser";
+    const GetUserUrl = "/api/user/getuser";
     const fetchUser = await fetch(GetUserUrl, Useroptions);
     const UserJson = await fetchUser.json();
     console.log("userjson", UserJson);
