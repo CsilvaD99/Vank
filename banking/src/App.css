@@ -1,5 +1,46 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+}
+.Card {
+  min-width: 70%;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+.Card2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 100vw;
+  background-color: #ffffff;
+  border-radius: 15px;
+  gap: 10px;
+}
+.DTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 100vw;
+}
+.stitle {
+  width: 15vw;
+}
+.column {
+  min-width: 40%;
+  gap: 10px;
+}
+.Trow {
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 100vw;
+  row-gap: 10px;
+  background-color: #ededed;
+}
+.Title {
+  min-width: 100%;
 }
 
 .App-logo {
@@ -36,9 +77,10 @@
     transform: rotate(360deg);
   }
 }
-#root {
-  background-color: darkgray;
+.home {
+  border: 10px black;
 }
+
 .Signup {
   display: flex;
   border: 5px solid#282c34;
@@ -62,21 +104,23 @@
 
   min-height: 100%;
 }
+
 .FormBox {
   display: flex;
   justify-content: center;
   width: vh;
 }
-#root {
-  background-color: darkgray;
-}
+
 .Navbar {
   display: flex;
   justify-content: Space-Evenly;
-  background-color: blue;
+  background-color: #1155b7;
   min-height: 2rem;
   align-items: center;
 }
 .link {
   color: white;
+}
+.Accountbox {
+  border: 5px solid black;
 }

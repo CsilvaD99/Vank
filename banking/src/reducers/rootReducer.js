@@ -1,5 +1,8 @@
-import React from "react";
+import { combineReducers } from "redux";
+import userInfoReducer from "./UserReducer";
+import TransactionReducer from "./TransferReducer";
 
-export default function rootReducer() {
-  return <div>rootReducer</div>;
-}
+export default combineReducers({
+  userInfoReducer,
+  TransactionReducer,
+});

@@ -6,8 +6,8 @@ router.post("/sendmoney", async (req, res) => {
   console.log("sendmon");
   try {
     console.log("inside try sendmoney");
-    const { id, plusbool, amount, touser } = req.body;
-    const sendTrans = await SendTransaction(id, plusbool, amount, touser);
+    const { email, amount, plusminus, toemail } = req.body;
+    const sendTrans = await SendTransaction(email, amount, plusminus, toemail);
     console.log("sendtrans", sendTrans);
     res.status(200).send(sendTrans);
   } catch (error) {
@@ -16,10 +16,11 @@ router.post("/sendmoney", async (req, res) => {
   }
 });
 
-router.get("/gettransfer", async (req, res) => {
+router.post("/gettransfer", async (req, res) => {
   console.log("gettrasfer");
   try {
-    const RTransfer = await ReadTrasfer();
+    const { email } = req.body;
+    const RTransfer = await ReadTrasfer(email);
     console.log(RTransfer);
 
     res.status(200).send(RTransfer);

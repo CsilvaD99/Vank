@@ -21,9 +21,9 @@ root.render(
     <Provider store={store}>
       <Navbar />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Login />} />
         <Route path="/mortgage" element={<Mortgage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<App />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/selle" element={<Selle />} />
       </Routes>

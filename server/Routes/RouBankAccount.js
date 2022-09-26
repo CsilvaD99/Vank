@@ -1,5 +1,5 @@
 import express from "express";
-import { SelectAccount, UpdateAccount } from "../Supa/BankAccount";
+import { SelectAccount, UpdateAccount } from "../Supa/BankAccount.js";
 const router = express.Router();
 
 // router.get("/getaccount", (req, res) => {
