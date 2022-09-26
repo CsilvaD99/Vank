@@ -10,7 +10,7 @@ export const SignnUp = async (
   const body = { email, password, firstName, lastName, role, address };
   console.log("sinnup info", body);
   try {
-    await fetch(`/api/user/signupuser`, {
+    await fetch(`/user/signupuser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export const LogInn = async (email, password) => {
   const body = { email, password };
   console.log("body", body);
   try {
-    await fetch(`/api/user/signin`, {
+    await fetch(`/user/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export const LogInn = async (email, password) => {
 };
 export const LogOutt = async () => {
   try {
-    await fetch(`/api/user/logout`, {
+    await fetch(`/user/logout`, {
       method: "GET",
     });
     console.log("userlogged out");
