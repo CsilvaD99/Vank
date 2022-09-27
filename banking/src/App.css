@@ -18,6 +18,7 @@
   background-color: #ffffff;
   border-radius: 15px;
   gap: 10px;
+  margin: 10px;
 }
 .DTitle {
   display: flex;
@@ -83,7 +84,8 @@
 
 .Signup {
   display: flex;
-  border: 5px solid#282c34;
+  justify-content: center;
+  align-items: center;
   min-height: 100%;
   min-width: fit-content;
   flex-direction: column;
@@ -91,11 +93,15 @@
 .Login {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 5px solid blue;
+  max-width: 50%;
   min-height: 100%;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
 }
 .Form {
   display: flex;
@@ -105,12 +111,21 @@
   min-height: 100%;
 }
 
+.Link2 {
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
 .FormBox {
   display: flex;
   justify-content: center;
-  width: vh;
 }
-
+.Income {
+  color: #1dcc70;
+}
+.Sent {
+  color: #ff3973;
+}
 .Navbar {
   display: flex;
   justify-content: Space-Evenly;
@@ -120,7 +135,26 @@
 }
 .link {
   color: white;
+  text-decoration: none;
 }
 .Accountbox {
   border: 5px solid black;
+}
+@media screen and (max-width: 820px) {
+  .Login {
+    min-width: 95%;
+  }
+  .Signup {
+    min-width: 90vw;
+  }
+  .column {
+    min-width: 95%;
+  }
+  .Trow {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Card {
+    min-width: 95%;
+  }
 }

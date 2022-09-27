@@ -25,7 +25,6 @@ router.post("/gettransfer", async (req, res) => {
 
     res.status(200).send(RTransfer);
   } catch (error) {
-    console.log(error);
     res.status(400).send(error);
   }
 });

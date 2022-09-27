@@ -2,17 +2,18 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { LogInn, LogOutt } from "../actions/Sign";
-import { useDispatch, useSelector } from "react-redux";
-import userInfoReducer from "../reducers/UserReducer";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { SET_USER } from "../action-types/types";
 
 export default function Login() {
-  const UserSelect = useSelector((state) => state?.userInfoReducer?.signininfo);
   const dispatch = useDispatch();
   const LogInInfo = async (e) => {
     const loginfo = {
       email: e.target.form[0].value,
-      password: e.target.form[1].value,
+      password: e.target.form[2].value,
     };
+    console.log(e);
     await LogInn(loginfo.email, loginfo.password);
 
     const Useroptions = {
@@ -24,34 +25,29 @@ export default function Login() {
     if (!LogInn) {
       window.alert("Incorrect Email or Password");
     }
-    const GetUserUrl = "/api/user/getuser";
+    const GetUserUrl = "http://localhost:3002/user/getuser";
     const fetchUser = await fetch(GetUserUrl, Useroptions);
     const UserJson = await fetchUser.json();
-    console.log("userjson", UserJson);
 
-    dispatch({ type: "SET_USER", payload: UserJson });
-    // if (UserSelect. === "authenticated") {
-    //   window.location.href = "/";
-    // }
-    // if ((UserSelect.aud = "authenticated")) {
-    //   window.location.href = "/";
-    // }
+    dispatch({ type: SET_USER, payload: UserJson });
+
     if (!UserJson) {
       window.alert("Invalid Email or Password");
     }
     if (dispatch) {
       window.alert("Logged In");
     }
-    console.log(fetchUser);
   };
 
   return (
-    <div className="Login">
+    <div className="Signup">
       <form className="Login">
+        <h3>Log In</h3>
         <TextField
           sx={{ width: { sm: 150, md: 400 } }}
           margin="normal"
-          variant="standard"
+          label="Email"
+          variant="outlined"
           type="text"
           name="email"
           placeholder="Email"
@@ -59,37 +55,33 @@ export default function Login() {
         <TextField
           sx={{ width: { sm: 150, md: 400 } }}
           margin="normal"
-          variant="standard"
+          label="Password"
+          variant="outlined"
           type="password"
           name="password"
           placeholder="Password"
           autoComplete="current-password"
         />
 
-        <Button
-          onClick={() => {
-            window.location.href = "/signup";
-          }}
-          variant="contained"
-        >
-          Sign up
-        </Button>
-        <Button
-          variant="contained"
-          onClick={(e) => {
-            LogInInfo(e);
-          }}
-        >
-          Log In
-        </Button>
-        <Button
-          variant="contained"
-          onClick={() => {
-            LogOutt();
-          }}
-        >
-          Log out
-        </Button>
+        <Link to="/signup">Not a Member? Sign Up</Link>
+        <div className="TwoB">
+          <Button
+            variant="contained"
+            onClick={() => {
+              LogOutt();
+            }}
+          >
+            Log out
+          </Button>
+          <Button
+            variant="contained"
+            onClick={(e) => {
+              LogInInfo(e);
+            }}
+          >
+            Log In
+          </Button>
+        </div>
       </form>
     </div>
   );

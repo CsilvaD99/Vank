@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Vank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vank is a client side webpage that provides its users the abilty to quickly send money to other users. Similar to a cashapp/zelle app.
+**Vank does not use real money, or request any money in any form or fashion. When an account gets created Vank automatically gives them "$100" to have funds to use the webpage.**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+#Color Palette
+NavBar Blue : #1155b7
+Button blue : #1876d1
+Card White: #ffffff
+Application Background color: #ededed
+Income text color : #1dcc70
+Sent text color:#ff3973
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#How to run Vank
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the Vank repo above to your computer.
+2. create a .env file with a `SUPABASE_URL=` and a `SUPABASE_KEY=` variables.
+3. In the terminal get to the `server` folder and type `npm i` to download the packeges.
+4. Once the npm i is done run `nodemon` to get the server up and running.
+5. In the terminal navigate to the `banking`folder.
+6. Once in the banking folder run `npm i` to download the react packeges.
+7. After the packages are done run `npm start` to get the react app running.
+8. Vank should automatically open your browser in your localhost:3000.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#Vank's creation
+Vank was made within the final 2 weeks at DigitalCrafts during the capstone project section. Vank's frontend uses React.js with React-Redux,React-Router-Dom,MUI for the inputs and buttons, and css for the rest of the styling.
+Vank's backend uses ExpressJS and Supabase for the database. Encryption and authentication is handled by Supabase.

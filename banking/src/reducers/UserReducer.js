@@ -20,6 +20,12 @@ const userInfoReducer = (state = initalState, action) => {
         ...state,
         moreinfo: action.payload,
       };
+    case "R_BALANCE":
+      const MoreUserinfo = state.moreinfo;
+      return {
+        ...state,
+        moreinfo: [...MoreUserinfo].filter((A) => A !== action?.payload),
+      };
     case `REMOVE_USER`:
       const usersignininfo = state.signininfo;
       return {

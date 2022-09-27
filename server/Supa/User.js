@@ -6,7 +6,6 @@ export const UserSignUpAuth = async (email, password) => {
     password: password,
   });
   if (error) {
-    console.log(error);
     return error;
   }
   return user;
@@ -18,7 +17,6 @@ export const UserInfoSignUp = async (firstName, lastName, address, role) => {
   if (role === "false") {
     role = false;
   }
-  console.log(role);
   const { data, error } = await supabase.from("UserInfo").insert({
     firstName: firstName,
     lastName: lastName,
@@ -26,7 +24,6 @@ export const UserInfoSignUp = async (firstName, lastName, address, role) => {
     modRole: role,
   });
   if (error) {
-    console.log("userinfoerror", error);
     return error;
   }
   return data;
@@ -37,10 +34,8 @@ export const UserSignIn = async (email, password) => {
     password: password,
   });
   if (error) {
-    console.log("sign in", error);
     return error;
   }
-  console.log("after the sign in error", user);
   return user;
 };
 export const UserLogOut = async () => {
@@ -49,7 +44,6 @@ export const UserLogOut = async () => {
 
 export const GetUser = async () => {
   const user = await supabase.auth.user();
-  console.log("user", user);
 
   return user;
 };
@@ -59,10 +53,8 @@ export const SelectuserName = async (email) => {
     .select("firstName,lastName,tamount")
     .eq("email", `${email}`);
   if (error) {
-    console.log(error);
     return error;
   }
-  console.log(UserInfo);
   return UserInfo;
 };
 export const UpdateAmount = async (amount, email) => {
@@ -71,7 +63,6 @@ export const UpdateAmount = async (amount, email) => {
     .update({ tamount: `${amount}` })
     .eq("email", `${email}`);
   if (error) {
-    console.log(error);
     return error;
   }
   return data;
@@ -86,7 +77,6 @@ export const UserSignUp = async (firstName, lastName, address, email) => {
     email: email,
   });
   if (error) {
-    console.log(error);
     return error;
   }
   return data;
@@ -108,12 +98,7 @@ export const UserMore = async (email) => {
     .select("*")
     .eq(`email`, `${email}`);
   if (error) {
-    console.log(error);
     return error;
   }
   return UserInfo;
 };
-
-// export const GetUserInfo = async () => {
-//   const { data: UserInfo, error } = await supabase.from("UserInfo").select();
-// };

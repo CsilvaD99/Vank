@@ -15,7 +15,7 @@ app.use("/acc", AccountRouter);
 app.use("/transf", TransfMoney);
 app.use("/user", UserRouter);
 
-app.get("/", async (req, res) => {
+app.get("/api/", async (req, res) => {
   res.send("Hello World");
 });
 

@@ -9,7 +9,6 @@ import { createLogger } from "redux-logger";
 import rootReducer from "./reducers/rootReducer";
 import Navbar from "./components/Navbar";
 
-import Mortgage from "./components/Mortgage";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Selle from "./components/Selle";
@@ -22,7 +21,6 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/mortgage" element={<Mortgage />} />
         <Route path="/home" element={<App />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/selle" element={<Selle />} />

@@ -3,8 +3,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PTransactionCard from "./Trasactioncard";
 import NTransactioncard from "./NTransactioncard";
+import { SET_POS_TRANSA } from "../action-types/types";
 
-export default function () {
+export default function Transactions() {
   const TransaSelect = useSelector(
     (state) => state?.TransactionReducer?.transaction
   );
@@ -14,7 +15,6 @@ export default function () {
   const dispatch = useDispatch();
 
   const GetTransactions = async (AccountSelect) => {
-    console.log("TransSelector", AccountSelect);
     const body = { email: AccountSelect };
     const Transoptions = {
       method: "POST",
@@ -23,13 +23,10 @@ export default function () {
       },
       body: JSON.stringify(body),
     };
-    console.log("TransferBody", body);
     const getTUrl = "http://localhost:3002/transf/gettransfer";
     const fetchT = await fetch(getTUrl, Transoptions);
     const TJson = await fetchT.json();
-    console.log("tJson", TJson);
-    dispatch({ type: "SET_POS_TRANSA", payload: TJson });
-    console.log("Transaselect", TransaSelect);
+    dispatch({ type: SET_POS_TRANSA, payload: TJson });
   };
   return (
     <div>
