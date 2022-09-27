@@ -102,6 +102,8 @@
   margin: 10px;
   background-color: #ffffff;
   border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .Form {
   display: flex;
